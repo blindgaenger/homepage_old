@@ -17,12 +17,15 @@ end
 
 def items
    [
-    Item.new('Blog', 'avatar.png', "Check out his [Blog](http://blog.blindgaenger.net/)"),
-    Item.new('GPS', 'com.apple.Maps.png'),
-    Item.new('Profile', 'com.apple.MobileAddressBook.png'),
-    Item.new('Mail', 'com.apple.mobilemail.png'),
-    Item.new('Development', 'com.apple.Preferences.png'),
-    Item.new('Music', 'com.apple.Remote.png'),
+    Item.new('blog', 'blog.png', 'Check out his [Blog](http://blog.blindgaenger.net/ "blindgaenger\'s blog - when you don\'t know where you @") about software development and self-evaluation.'),
+    Item.new('soup', 'soup.png', 'Everything else ends up in a [Soup](http://blindgaenger.soup.io/ "Taste the soup?") ... Yummy!'),
+    Item.new('facebook', 'facebook.png', 'I know how to use [Facebook](http://www.facebook.com/ "Book of faces.") and if you\'re a kind person I\'ll add you.'),
+
+    #Item.new('GPS', 'gps.png'),
+    #Item.new('Profile', 'profile.png'),
+    #Item.new('Mail', 'mail.png'),
+    #Item.new('Development', 'development.png'),
+    #Item.new('Music', 'music.png'),
   ]
 end
 

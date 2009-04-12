@@ -1,34 +1,38 @@
-%h1
-  This is the homepage of my alter ego <a href="http://blindgaenger.net/" title="You are already here!">blindgaenger</a>.
 
-%p
-  I'm ... no, he's interested in various facets of software development.
-
-%hr
 
 %ul
   - @items.each do |item|
-    %li
-      %img{:src=>"images/#{item.icon}"}
+    %li{:name=>item.name}
+      %img{:src=>"icons/#{item.icon}", :alt=>item.name}
+
+%h1 This is the homepage of my alter ego <a href="http://blindgaenger.net/" title="You are already here!">blindgaenger</a>.
+%p I'm ... no, he's interested in various aspects of software development.
+
+-#
+  %hr
+  %ul
+    - @items.each do |item|
+      %li
+        %img{:src=>"images/#{item.icon}"}
 
 
-- @items.each do |item|
-  = item.to_html
+  - @items.each do |item|
+    = item.to_html
+
+
+%h2{:name=>'blog'} Blog
+%p Check out his <a href="http://blog.blindgaenger.net/" title="blindgaenger's blog - when you don't know where you @">Blog</a> about software development and self-evaluation.
+
+
+%h2{:name=>'soup'} Soup
+%p Everything else ends up in a <a href="http://blindgaenger.soup.io/" title="Taste the soup?">Soup</a> ... <strong>Yummy!</strong>
+
+
+%h2{:name=>'facebook'} Facebook
+%p I know how to use <a href="http://www.facebook.com/" title="Book of faces">Facebook</a> and if you're a kind person I'll add you.
 
 
 -#
-  %p#blog
-    %img{:src=>'icons/avatar.png'}
-    %span Check out his <a href="http://blog.blindgaenger.net/" title="blindgaenger's blog - when you don't know where you @">Blog</a> about software development and self-evaluation.
-
-  %p#soup
-    %img{:src=>'icons/soup.png'}
-    %span Everything else ends up in a <a href="http://blindgaenger.soup.io/" title="Taste the soup?">Soup</a> ... <strong>Yummy!</strong>
-
-  %p#facebook
-    %img{:src=>'icons/facebook.png'}
-    %span I know how to use <a href="http://www.facebook.com/" title="Book of faces">Facebook</a> and if you're a kind person I'll add you.
-
   %p
     %img{:src=>'images/com.apple.Maps.png'}
     %span This is some text about the N810 and geo-caching.
@@ -54,21 +58,12 @@
 :javascript
   $(document).ready(function() {
 
-    /*
-    $("p span").hide();
-    $("p").click(function() {
-      $('span', this).animate({
-        'opacity' : 'toggle',
-      });
-    });
-    */
+    $("h2").hide();
 
-
-    //$("p").hide();
-    $('ul li').click(function() {
-      var id = $(this).attr('id');
-      //$('p#' + id + ' span', document).slideToggle();
-      $('p', document).slideToggle();
+    $('li').hover(function() {
+      $("h2[name=" + $(this).attr('name') + "] + p").addClass("active");
+    }, function() {
+      $("h2[name=" + $(this).attr('name') + "] + p").removeClass("active");
     });
 
   });

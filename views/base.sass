@@ -45,11 +45,10 @@ body
   font-size: 200%
 
   #box
-    /background: transparent url(images/Wallpaper.png) no-repeat scroll center top
     margin: 80px auto 0
     padding: 0
     text-align: left
-    width: 640px
+    width: 600px
     /width: 480px
     /width: 320px
     /height: 320px
@@ -60,37 +59,67 @@ body
     font-weight: bold
     text-align: justify
 
-    h1, p
-      display: inline
+    h1
       font-size: 1em
+      display: inline
+
+    li
+      display: inline
+      list-style-type: none
+      padding-right: 30px
+      cursor: pointer
+
+    p
+      display: inline
+
+    .active
+      color= !Butter1
 
     a, em
       text-decoration: none
       font-style: normal
       color= !SkyBlue1
 
-    hr
-      border-width: 1px
-      border-style: solid
-      border-color= !Aluminium2
+    //Test
+
+    -#
+      h1
+        color: red
+      h2
+        color: blue
+      p
+        color: green
+      
+
+    -#
+      h1, p
+        display: inline
+        font-size: 1em
+
+      a, em
+        text-decoration: none
+        font-style: normal
+        color= !SkyBlue1
+
+      hr
+        border-width: 1px
+        border-style: solid
+        border-color= !Aluminium2
 
 
-    li
-      display: inline
-      list-style-type: none
-      padding-right: 30px
 
-    img
-      cursor: pointer
-      /width: 60px
-      /height: 60px
-      /border-width: 2px
-      /border-style: solid
-      /border-color= !SkyBlue1
-      /padding: 1px
-      /-moz-border-radius: 6px
-      /width: 1em
-      /height: 1em
-      /background: transparent url(images/com.apple.Maps.png) no-repeat left top
-      /overflow: hidden
-      /float: left
+      img
+        cursor: pointer
+        /width: 60px
+        /height: 60px
+        /border-width: 2px
+        /border-style: solid
+        /border-color= !SkyBlue1
+        /padding: 1px
+        /-moz-border-radius: 6px
+        /width: 1em
+        /height: 1em
+        /background: transparent url(images/com.apple.Maps.png) no-repeat left top
+        /overflow: hidden
+        /float: left
+
