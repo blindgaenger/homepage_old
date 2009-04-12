@@ -1,0 +1,52 @@
+%h1
+  This is the homepage of my alter ego <a href="http://blindgaenger.net/" title="You are already here!">blindgaenger</a>.
+
+%p
+  I'm ... no, he's interested in various facets of software development.
+
+%hr
+
+%p
+  %img{:src=>'icons/avatar.png'}
+  %span Check out his <a href="http://blog.blindgaenger.net/" title="blindgaenger's blog - when you don't know where you @">Blog</a> about software development and self-evaluation.
+
+%p
+  %img{:src=>'icons/soup.png'}
+  %span Everything else ends up in a <a href="http://blindgaenger.soup.io/" title="Taste the soup?">Soup</a> ... <strong>Yummy!</strong>
+
+%p
+  %img{:src=>'icons/facebook.png'}
+  %span I know how to use <a href="http://www.facebook.com/" title="Book of faces">Facebook</a> and if you're a kind person I'll add you.
+
+%p
+  %img{:src=>'images/com.apple.Maps.png'}
+  %span This is some text about the N810 and geo-caching.
+
+%p
+  %img{:src=>'images/com.apple.MobileAddressBook.png'}
+  %span Profile
+
+%p
+  %img{:src=>'images/com.apple.mobilemail.png'}
+  %span Mail
+
+%p
+  %img{:src=>'images/com.apple.Preferences.png'}
+  %span Development
+
+%p
+  %img{:src=>'images/com.apple.Remote.png'}
+  %span Music
+
+
+
+:javascript
+  $(document).ready(function() {
+    $("p span").hide();
+
+    $("p").click(function() {
+      $('span', this).animate({
+        'opacity' : 'toggle',
+      });
+    });
+  });
