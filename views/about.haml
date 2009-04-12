@@ -6,47 +6,69 @@
 
 %hr
 
-%p
-  %img{:src=>'icons/avatar.png'}
-  %span Check out his <a href="http://blog.blindgaenger.net/" title="blindgaenger's blog - when you don't know where you @">Blog</a> about software development and self-evaluation.
+%ul
+  - @items.each do |item|
+    %li
+      %img{:src=>"images/#{item.icon}"}
 
-%p
-  %img{:src=>'icons/soup.png'}
-  %span Everything else ends up in a <a href="http://blindgaenger.soup.io/" title="Taste the soup?">Soup</a> ... <strong>Yummy!</strong>
 
-%p
-  %img{:src=>'icons/facebook.png'}
-  %span I know how to use <a href="http://www.facebook.com/" title="Book of faces">Facebook</a> and if you're a kind person I'll add you.
+- @items.each do |item|
+  = item.to_html
 
-%p
-  %img{:src=>'images/com.apple.Maps.png'}
-  %span This is some text about the N810 and geo-caching.
 
-%p
-  %img{:src=>'images/com.apple.MobileAddressBook.png'}
-  %span Profile
+-#
+  %p#blog
+    %img{:src=>'icons/avatar.png'}
+    %span Check out his <a href="http://blog.blindgaenger.net/" title="blindgaenger's blog - when you don't know where you @">Blog</a> about software development and self-evaluation.
 
-%p
-  %img{:src=>'images/com.apple.mobilemail.png'}
-  %span Mail
+  %p#soup
+    %img{:src=>'icons/soup.png'}
+    %span Everything else ends up in a <a href="http://blindgaenger.soup.io/" title="Taste the soup?">Soup</a> ... <strong>Yummy!</strong>
 
-%p
-  %img{:src=>'images/com.apple.Preferences.png'}
-  %span Development
+  %p#facebook
+    %img{:src=>'icons/facebook.png'}
+    %span I know how to use <a href="http://www.facebook.com/" title="Book of faces">Facebook</a> and if you're a kind person I'll add you.
 
-%p
-  %img{:src=>'images/com.apple.Remote.png'}
-  %span Music
+  %p
+    %img{:src=>'images/com.apple.Maps.png'}
+    %span This is some text about the N810 and geo-caching.
+
+  %p
+    %img{:src=>'images/com.apple.MobileAddressBook.png'}
+    %span Profile
+
+  %p
+    %img{:src=>'images/com.apple.mobilemail.png'}
+    %span Mail
+
+  %p
+    %img{:src=>'images/com.apple.Preferences.png'}
+    %span Development
+
+  %p
+    %img{:src=>'images/com.apple.Remote.png'}
+    %span Music
 
 
 
 :javascript
   $(document).ready(function() {
-    $("p span").hide();
 
+    /*
+    $("p span").hide();
     $("p").click(function() {
       $('span', this).animate({
         'opacity' : 'toggle',
       });
     });
+    */
+
+
+    //$("p").hide();
+    $('ul li').click(function() {
+      var id = $(this).attr('id');
+      //$('p#' + id + ' span', document).slideToggle();
+      $('p', document).slideToggle();
+    });
+
   });
