@@ -1,5 +1,38 @@
-%h1 Index
-%ul
+#main
+
+  %hr
+
+  - @texts.each do |text|
+    = markdown text
+
   - @items.each do |item|
-    %li
-      %img{:src=>"images/#{item.icon}"}
+    %h2
+      %a{:name=>item['id']}= item['name']
+    = markdown item['text']
+
+  %hr
+
+#sidebar
+  %ul
+    - @items.each do |item|
+      %li{:name=>item['id']}
+        %a{:href=>item['link']}
+          %img{:src=>"icons/#{item['icon']}", :alt=>item['name']}
+
+:javascript
+  $(document).ready(function() {
+    $('li').hover(function() {
+      $(this).addClass("active");
+      var anchor = $(this).attr('name')
+      var el = $("h2:has(a[name=" + anchor + "]) + p")
+      //el.stop().animate( { color:"#eeeeec" }, 250 );
+      el.addClass('active');
+      
+    }, function() {
+      $(this).removeClass("active");
+      var anchor = $(this).attr('name')
+      var el = $("h2:has(a[name=" + anchor + "]) + p")
+      //el.stop().animate( { color:"#888a85" }, 750 );
+      el.removeClass('active');
+    });
+  });

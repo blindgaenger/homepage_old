@@ -1,0 +1,31 @@
+---
+- "# This is the homepage of my alter ego [blindgaenger](http://blindgaenger.net/ \"You are already here!\")."
+- "I'm interested in various aspects of software."
+- 
+  id: blog
+  name: Blog
+  icon: blog.png
+  link: http://blog.blindgaenger.net/
+  text: So check out my [Blog](http://blog.blindgaenger.net/ "blindgaenger\'s blog - when you don\'t know where you @") 
+        about software development, life-hacking and self-evaluation.
+-
+  id: github
+  name: GitHub
+  icon: github.png
+  link: http://github.com/blindgaenger/
+  text: You may fork me on [Github](http://github.com/blindgaenger/ "blindgaenger\'s repo") if you dare.
+-
+  id: soup
+  name: Soup
+  icon: soup.png
+  link: http://blindgaenger.soup.io/
+  text: Everything else ends up in my [Soup](http://blindgaenger.soup.io/ "Taste the soup?"). Yummy!
+-
+  id: facebook
+  name: Facebook
+  icon: facebook.png
+  link: http://www.facebook.com/
+  text: I know how to use [Facebook](http://www.facebook.com/ "Book of faces.") 
+        and if you\'re a kind person I may add you.
+
+
