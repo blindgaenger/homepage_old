@@ -55,61 +55,55 @@ body
     font-weight: bold
     text-align: justify
 
-    li
-      /display: inline
-      list-style-type: none
-      margin-right: 30px
-      cursor: pointer
-
-      img
-        width: 60px
-        height: 60px        
-        border: none
-
-    hr
-      border-width: 1px
+    #main
+      float: left
+      width: 500px
       border-style: solid
       border-color= !Aluminium4
+      border-width: 2px 0 2px 0
+      padding: 0.5em 0
 
-    h1
-      font-size: 1em
-      display: inline
-    
-    h2
-      display: none
+      h1
+        font-size: 1em
+        display: inline
+      
+      h2
+        display: none
 
-    p
-      display: inline
+      p
+        display: inline
+        cursor: default
 
-    a, em
-      text-decoration: none
-      font-style: normal
-      color= !SkyBlue1
+      p.active
+        color= !Butter1
 
-    li.active
-      /border-bottom-width: 4px
-      /border-bottom-style: solid
-      /border-bottom-color= !Aluminium1
+      a, em
+        text-decoration: none
+        font-style: normal
+        color= !SkyBlue1
 
-    p.active
-      color= !Aluminium1
+    #sidebar
+      float: right
+      width: 100px
+      
+      ul
+        margin: 1em 0
+        padding: 0 20px
+        
+        li
+          margin-bottom: 5px
+          /display: inline
+          list-style-type: none
+          /margin-right: 30px
+          border: 0px solid transparent
+          border-bottom-width: 4px
+          cursor: pointer
 
-#main
-  /background: #9c9
-  float: left
-  width: 500px
+          img
+            width: 60px
+            height: 60px        
+            border: none
 
-
-#sidebar
-  /background: #c9c
-  float: right
-  width: 100px
-  
-  ul
-    padding: 0 20px
-    
-    li
-      height: 100px
-
-
+        li.active
+          border-bottom-color= !Butter1
 

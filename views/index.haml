@@ -1,38 +1,49 @@
 #main
-
-  %hr
-
-  - @texts.each do |text|
-    = markdown text
-
   - @items.each do |item|
-    %h2
-      %a{:name=>item['id']}= item['name']
-    = markdown item['text']
-
-  %hr
+    - if item.is_a? String
+      = markdown item
+    - if item.is_a? Hash
+      %h2
+        %a{:name=>item['id']}= item['name']
+      = markdown item['text']
 
 #sidebar
   %ul
-    - @items.each do |item|
+    - @items.select {|i| i.is_a? Hash}.each do |item|
       %li{:name=>item['id']}
         %a{:href=>item['link']}
           %img{:src=>"icons/#{item['icon']}", :alt=>item['name']}
 
 :javascript
+  function animateParagraphs(item, color, time) {
+    var anchor = $(item).attr('name');
+    var para = $("h2:has(a[name=" + anchor + "]) + p");
+    para.stop().animate( { color: color }, time );
+  }
+
   $(document).ready(function() {
     $('li').hover(function() {
       $(this).addClass("active");
-      var anchor = $(this).attr('name')
-      var el = $("h2:has(a[name=" + anchor + "]) + p")
-      //el.stop().animate( { color:"#eeeeec" }, 250 );
-      el.addClass('active');
+      
+      animateParagraphs(this, "#fce94f", 250);
+      
+      /*
+      var anchor = $(this).attr('name');
+      var el = $("h2:has(a[name=" + anchor + "]) + p");
+      //el.addClass('active');
+      el.stop().animate( { color:"#fce94f" }, 250 );
+      */
       
     }, function() {
       $(this).removeClass("active");
-      var anchor = $(this).attr('name')
+      
+            animateParagraphs(this, "#888a85", 1000);
+      
+      /*
+      var anchor = $(this).attr('name');
       var el = $("h2:has(a[name=" + anchor + "]) + p")
-      //el.stop().animate( { color:"#888a85" }, 750 );
-      el.removeClass('active');
+      //el.removeClass('active');
+      el.stop().animate( { color:"#888a85" }, 1000 );
+      */
     });
   });

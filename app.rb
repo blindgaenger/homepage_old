@@ -10,9 +10,7 @@ helpers do
 end
 
 get '/' do
-  items = YAML.load(File.read('content.yml'))
-  @texts = items.select{|i| i.is_a? String}
-  @items = items.reject{|i| i.is_a? String}
+  @items = YAML.load(File.read('content.yml'))
   haml :index
 end
 
