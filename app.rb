@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'sinatra'
-require 'rdiscount'
 require 'yaml'
 
 helpers do
-  def markdown(text)
-    RDiscount.new(text).to_html
+  def to_html(item)
+    link = %Q[<a href="#{item['link']}" title="#{item['desc']}">#{item['name']}</a>]
+    item['text'].gsub("LINK", link)
   end
 end
 

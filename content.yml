@@ -1,41 +1,44 @@
 ---
 -
   id: homepage
-  name: Homepage
+  name: blindgaenger
   icon: homepage.png
   link: http://blindgaenger.net/
-  text: This is the homepage of my alter ego [blindgaenger](http://blindgaenger.net/ "You are already here!").
-        I'm interested in various aspects of software.
+  desc: You are already here!
+  text: This is the homepage of my alter ego LINK. I'm interested in various aspects of software.
 - 
   id: blog
   name: Blog
   icon: blog.png
   link: http://blog.blindgaenger.net/
-  text: So check out my [Blog](http://blog.blindgaenger.net/ "blindgaenger\'s blog - when you don\'t know where you @") 
-        about development, life-hacking and self-evaluation.
+  desc: when you don't know where you @
+  text: So check out my LINK about development, life-hacking and self-evaluation.
 -
   id: github
   name: GitHub
   icon: github.png
   link: http://github.com/blindgaenger/
-  text: You can fork me on [GitHub](http://github.com/blindgaenger/ "blindgaenger\'s repo") if you dare.
+  desc: blindgaenger's repo
+  text: You can fork me on LINK if you dare.
 -
   id: soup
   name: Soup
   icon: soup.png
   link: http://blindgaenger.soup.io/
-  text: Everything else ends up in my [Soup](http://blindgaenger.soup.io/ "Taste the soup?"). Yummy!
+  desc: Taste the soup?
+  text: Everything else ends up in my LINK. Yummy!
 -
   id: facebook
   name: Facebook
   icon: facebook.png
   link: http://www.facebook.com/
-  text: I know how to use [Facebook](http://www.facebook.com/ "Book of faces.") 
-        and if you're a kind person I'll add you.
+  desc: Face the book.
+  text: I know how to use LINK and if you're a kind person I'll add you.
 -
   id: contact
   name: Contact
   icon: mail.png
-  link:
-  text: Please feel free to [Contact](mailto:blindgaenger@gmail.com) me.
+  link: mailto:blindgaenger@gmail.com
+  desc: Send me a mail.
+  text: So please feel free to LINK me.
 

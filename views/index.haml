@@ -1,49 +1,32 @@
 #main
   - @items.each do |item|
-    - if item.is_a? String
-      = markdown item
-    - if item.is_a? Hash
-      %h2
-        %a{:name=>item['id']}= item['name']
-      = markdown item['text']
+    - if @items.first == item
+      %h1{:id=>item['id']}= to_html item
+    - else
+      %p{:id=>item['id']}= to_html item
 
 #sidebar
   %ul
     - @items.select {|i| i.is_a? Hash}.each do |item|
       %li{:name=>item['id']}
-        %a{:href=>item['link']}
-          %img{:src=>"icons/#{item['icon']}", :alt=>item['name']}
+        %a{:href=>item['link'], :title=>item['desc']}>
+          %img{:src=>"icons/#{item['icon']}", :alt=>item['name']}>
 
 :javascript
-  function animateParagraphs(item, color, time) {
-    var anchor = $(item).attr('name');
-    var para = $("h2:has(a[name=" + anchor + "]) + p");
-    para.stop().animate( { color: color }, time );
+  var colorButter1 = "#fce94f";
+  var colorAluminium4 = "#888a85";
+
+  function animateSection(item, color, time) {
+    var section = $("#" + $(item).attr('name'));
+    section.stop().animate( { color: color }, time );
   }
 
   $(document).ready(function() {
     $('li').hover(function() {
       $(this).addClass("active");
-      
-      animateParagraphs(this, "#fce94f", 250);
-      
-      /*
-      var anchor = $(this).attr('name');
-      var el = $("h2:has(a[name=" + anchor + "]) + p");
-      //el.addClass('active');
-      el.stop().animate( { color:"#fce94f" }, 250 );
-      */
-      
+      animateSection(this, colorButter1, 250);
     }, function() {
       $(this).removeClass("active");
-      
-            animateParagraphs(this, "#888a85", 1000);
-      
-      /*
-      var anchor = $(this).attr('name');
-      var el = $("h2:has(a[name=" + anchor + "]) + p")
-      //el.removeClass('active');
-      el.stop().animate( { color:"#888a85" }, 1000 );
-      */
+      animateSection(this, colorAluminium4, 1000);
     });
   });
