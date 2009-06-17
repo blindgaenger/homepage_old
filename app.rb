@@ -9,10 +9,12 @@ helpers do
   end
   
   def memcache(&block)
+    return yield if development?
+  
     @@cache ||= {}
     path = request.path_info.to_s || "index"
     content = @@cache[path]
-    unless content
+    if content.nil?
       puts "CACHED: #{request.path_info}"
       content = @@cache[path] = yield
     end
