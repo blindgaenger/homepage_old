@@ -12,7 +12,14 @@
   icon: blog.png
   link: http://blog.blindgaenger.net/
   desc: when you don't know where you @
-  text: So check out my LINK about development, life-hacking and self-evaluation.
+  text: So check out my LINK about life-hacking.
+-
+  id: twitter
+  name: Twitter
+  icon: twitter.png
+  link: http://twitter.com/blindgaenger/
+  desc: Tweet like a bird.
+  text: Or follow my thoughts on LINK in real-time.
 -
   id: github
   name: GitHub
@@ -26,14 +33,14 @@
   icon: soup.png
   link: http://blindgaenger.soup.io/
   desc: Taste the soup?
-  text: Everything else ends up in my LINK. Yummy!
+  text: Everything else ends up in my LINK … Yummy!
 -
   id: facebook
   name: Facebook
   icon: facebook.png
   link: http://www.facebook.com/blindgaenger
   desc: Face the book.
-  text: I know how to use LINK and if you're a kind person I'll add you.
+  text: If you're a kind person and know how to use LINK I'll add you.
 -
   id: contact
   name: Contact
