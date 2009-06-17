@@ -40,19 +40,20 @@
 
 body
   color: white
-  background-color: black
+  background-color= !Black
   font-family: Helvetica,Tahoma,Verdana,Arial,sans-serif
   font-size: 200%
 
   #box
     margin: 80px auto 0
     padding: 0
-    text-align: left
     width: 600px
-
-    font-size: 1em
+    height: 100%
+    background-color= !Black
     color= !Aluminium4
+    font-size: 1em
     font-weight: bold
+    text-align: left
     text-align: justify
 
     #main
@@ -63,11 +64,8 @@ body
       border-width: 2px 0 2px 0
       padding: 0.5em 0
 
-      h1
+      h1, p
         font-size: 1em
-        display: inline
-
-      p
         display: inline
         cursor: default
 
@@ -75,6 +73,9 @@ body
         text-decoration: none
         font-style: normal
         color= !SkyBlue1
+
+      a:hover
+        color= !Butter1
 
     #sidebar
       float: right
@@ -86,9 +87,7 @@ body
         
         li
           margin-bottom: 5px
-          /display: inline
           list-style-type: none
-          /margin-right: 30px
           border: 0px solid transparent
           border-bottom-width: 4px
           cursor: pointer

@@ -7,14 +7,31 @@ helpers do
     link = %Q[<a href="#{item['link']}" title="#{item['desc']}">#{item['name']}</a>]
     item['text'].gsub("LINK", link)
   end
+  
+  def memcache(&block)
+    @@cache ||= {}
+    path = request.path_info.to_s || "index"
+    content = @@cache[path]
+    unless content
+      puts "CACHED: #{request.path_info}"
+      content = @@cache[path] = yield
+    end
+    etag path
+    content
+  end
 end
 
 get '/' do
-  @items = YAML.load(File.read('content.yml'))
-  haml :index
+  memcache do
+    @items = YAML.load(File.read('content.yml'))
+    haml :index
+  end
 end
 
 get '/stylesheets/:style.css' do
   content_type 'text/css'
-  sass params['style'].to_sym
+  memcache do
+    sass params['style'].to_sym
+  end
 end
+

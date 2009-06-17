@@ -10,7 +10,7 @@
     - @items.select {|i| i.is_a? Hash}.each do |item|
       %li{:name=>item['id']}
         %a{:href=>item['link'], :title=>item['desc']}>
-          %img{:src=>"icons/#{item['icon']}", :alt=>item['name']}>
+          %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
 
 :javascript
   var colorButter1 = "#fce94f";

@@ -31,14 +31,14 @@
   id: facebook
   name: Facebook
   icon: facebook.png
-  link: http://www.facebook.com/
+  link: http://www.facebook.com/blindgaenger
   desc: Face the book.
   text: I know how to use LINK and if you're a kind person I'll add you.
 -
   id: contact
   name: Contact
   icon: mail.png
-  link: mailto:blindgaenger@gmail.com
+  link: mailto:blindgaenger_AT_gmail_DOT_com
   desc: Send me a mail.
   text: So please feel free to LINK me.
 
