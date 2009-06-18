@@ -1,9 +1,7 @@
 #main
+  %h1 Welcome!
   - @items.each do |item|
-    - if @items.first == item
-      %h1{:id=>item['id']}= to_html item
-    - else
-      %p{:id=>item['id']}= to_html item
+    %p{:id=>item['id']}= to_html item
 
 #sidebar
   %ul
