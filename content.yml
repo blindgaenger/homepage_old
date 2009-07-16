@@ -28,12 +28,13 @@
   desc: blindgaenger's repo
   text: Or fork one of my projects on LINK if you dare.
 -
-  id: soup
-  name: Soup
-  icon: soup.png
-  link: http://blindgaenger.soup.io/
-  desc: Taste the soup?
+  id: tumblr
+  name: Tumblr
+  icon: tumblr.png
+  link: http://blindgaenger.tumblr.com/
+  desc: Tumble with me.
   text: Everything else ends up in my LINK … Yummy!
+  text: Everything else will be logged on LINK.
 -
   id: facebook
   name: Facebook
