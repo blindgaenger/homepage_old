@@ -25,7 +25,8 @@ end
 
 get '/' do
   memcache do
-    @items = YAML.load(File.read('content.yml'))
+    content_file = ARGV[0] || 'content.yml'
+    @items = YAML.load(File.read(content_file))
     haml :index
   end
 end
