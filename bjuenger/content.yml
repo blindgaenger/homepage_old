@@ -1,4 +1,7 @@
 ---
+config:
+
+items:
 -
   id: homepage
   name: BJUENGER

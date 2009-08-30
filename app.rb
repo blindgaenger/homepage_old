@@ -34,9 +34,16 @@ end
 get '/' do
   memcache do
     content_file = File.join(CONTENT_DIR, 'content.yml')
-    @items = YAML.load(File.read(content_file))
+    content = YAML.load(File.read(content_file))
+    @items = content['items']
     haml :index
   end
+end
+
+get '/commons/*' do
+  path = File.join'.', unescape(request.path_info)
+  pass unless File.file?(path)
+  send_file path, :disposition => nil
 end
 
 get '/stylesheets/:style.css' do
