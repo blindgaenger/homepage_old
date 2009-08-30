@@ -1,0 +1,52 @@
+---
+-
+  id: homepage
+  name: BJUENGER
+  icon: homepage.png
+  link: http://blindgaenger.net/
+  desc: You are already here!
+  text: This is the homepage of my alter ego LINK. I'm interested in various aspects of software.
+- 
+  id: blog
+  name: Blog
+  icon: blog.png
+  link: http://blog.blindgaenger.net/
+  desc: when you don't know where you @
+  text: So check out my LINK about development and some life-hacking.
+-
+  id: twitter
+  name: Twitter
+  icon: twitter.png
+  link: http://twitter.com/blindgaenger/
+  desc: Tweet like a bird.
+  text: Maybe follow me on LINK instead.
+-
+  id: github
+  name: GitHub
+  icon: github.png
+  link: http://github.com/blindgaenger/
+  desc: blindgaenger's repo
+  text: Or fork one of my projects on LINK if you dare.
+-
+  id: tumblr
+  name: Tumblr
+  icon: tumblr.png
+  link: http://blindgaenger.tumblr.com/
+  desc: Tumble with me.
+  text: Everything else ends up in my LINK … Yummy!
+  text: Everything else will be logged on LINK.
+-
+  id: facebook
+  name: Facebook
+  icon: facebook.png
+  link: http://www.facebook.com/blindgaenger
+  desc: Face the book.
+  text: If you're a kind person and know how to use LINK I'll add you.
+-
+  id: contact
+  name: Contact
+  icon: mail.png
+  link: mailto:blindgaenger_AT_gmail_DOT_com
+  desc: Send me a mail.
+  text: So please feel free to LINK me.
+

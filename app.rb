@@ -2,6 +2,11 @@ require 'rubygems'
 require 'sinatra'
 require 'yaml'
 
+CONTENT_DIR = ENV['CONTENT'] || ARGV[0]
+if CONTENT_DIR.nil? || !File.exist?(CONTENT_DIR)
+  raise "specify a valid $CONTENT environment variable or a command line argument"
+end
+
 helpers do
   def to_html(item)
     link = %Q[<a href="#{item['link']}" title="#{item['desc']}">#{item['name']}</a>]
@@ -25,7 +30,7 @@ end
 
 get '/' do
   memcache do
-    content_file = ARGV[0] || 'content.yml'
+    content_file = File.join(CONTENT_DIR, 'content.yml')
     @items = YAML.load(File.read(content_file))
     haml :index
   end
