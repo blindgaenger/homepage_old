@@ -2,9 +2,12 @@ require 'rubygems'
 require 'sinatra'
 require 'yaml'
 
-CONTENT_DIR = ENV['CONTENT'] || ARGV[0]
-if CONTENT_DIR.nil? || !File.exist?(CONTENT_DIR)
-  raise "specify a valid $CONTENT environment variable or a command line argument"
+configure do
+  CONTENT_DIR = ENV['CONTENT'] || ARGV[0]
+  if CONTENT_DIR.nil? || !File.exist?(CONTENT_DIR)
+    raise "specify a valid $CONTENT environment variable or a command line argument"
+  end
+  set :public, File.join(CONTENT_DIR, 'public')
 end
 
 helpers do
