@@ -4,52 +4,45 @@ config:
 items:
 -
   id: homepage
-  name: BJUENGER
+  name: Bernd J&uuml;nger
   icon: homepage.png
-  link: http://blindgaenger.net/
-  desc: You are already here!
-  text: This is the homepage of my alter ego LINK. I'm interested in various aspects of software.
-- 
+  link: http://bjuenger.de/
+  desc: TODO
+  text: Dies ist die Homepage von LINK. Ich bin Software-Entwickler in Karlsruhe.
+-
   id: blog
   name: Blog
   icon: blog.png
   link: http://blog.blindgaenger.net/
   desc: when you don't know where you @
-  text: So check out my LINK about development and some life-hacking.
+  text: Mein LINK ist deshalb auch eher technisch.
 -
-  id: twitter
-  name: Twitter
-  icon: twitter.png
-  link: http://twitter.com/blindgaenger/
-  desc: Tweet like a bird.
-  text: Maybe follow me on LINK instead.
+  id: resume
+  name: Lebenslauf
+  icon: resume.png
+  link: http://bjuenger.de/resume/
+  desc: TODO
+  text: Aber vielleicht ist mein LINK interessant.
 -
-  id: github
-  name: GitHub
-  icon: github.png
-  link: http://github.com/blindgaenger/
-  desc: blindgaenger's repo
-  text: Or fork one of my projects on LINK if you dare.
--
-  id: tumblr
-  name: Tumblr
-  icon: tumblr.png
-  link: http://blindgaenger.tumblr.com/
-  desc: Tumble with me.
-  text: Everything else ends up in my LINK … Yummy!
-  text: Everything else will be logged on LINK.
+  id: xing
+  name: XING
+  icon: xing.png
+  link: https://www.xing.com/profile/Bernd_Juenger
+  desc: TODO
+  text: Die selben Informationen sind aber auch auf meinen LINK Profil.
 -
   id: facebook
   name: Facebook
   icon: facebook.png
   link: http://www.facebook.com/blindgaenger
   desc: Face the book.
-  text: If you're a kind person and know how to use LINK I'll add you.
+  text: Freunde und Bekannte sollten mich auf LINK finden.
 -
   id: contact
-  name: Contact
+  name: Email
   icon: mail.png
-  link: mailto:blindgaenger_AT_gmail_DOT_com
+  link: mailto:bernd.juenger_AT_gmail_DOT_com
   desc: Send me a mail.
-  text: So please feel free to LINK me.
+  text: Und sonst bin ich immer gerne per LINK zu erreichen.
+
 
