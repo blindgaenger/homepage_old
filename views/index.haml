@@ -49,15 +49,6 @@
         }
 
         $(document).ready(function() {
-          $('#turn').fold({
-            directory: '/images',
-            turnImage: 'turn.png',
-            side: 'right',
-            startingWidth: 100,
-            startingHeight: 100,
-            autoCurl: true
-          });
-        
           // carry the colors from the stylesheet to javascript
           // can't access them with jQuery (see http://dev.jquery.com/ticket/4434)
           var textColor = $('#carrier').css('color');
@@ -69,6 +60,15 @@
           }, function() {
             $(this).removeClass("active");
             animateSection(this, textColor, 1000);
+          });
+          
+          $('#turn').fold({
+            directory: '/images',
+            turnImage: 'turn.png',
+            side: 'right',
+            startingWidth: 100,
+            startingHeight: 100,
+            autoCurl: true
           });
         });
 
