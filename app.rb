@@ -3,11 +3,11 @@ require 'sinatra'
 require 'yaml'
 
 configure do
-  CONTENT_DIR = ENV['CONTENT'] || ARGV[0]
-  if CONTENT_DIR.nil? || !File.exist?(CONTENT_DIR)
-    raise "specify a valid $CONTENT environment variable or a command line argument"
+  PROFILE_DIR = ENV['PROFILE'] || ARGV[0]
+  if PROFILE_DIR.nil? || !File.exist?(PROFILE_DIR)
+    raise "specify a valid $PROFILE environment variable or a command line argument"
   end
-  set :public, File.join(CONTENT_DIR, 'public')
+  set :public, File.join(PROFILE_DIR, 'public')
 end
 
 helpers do
@@ -33,7 +33,7 @@ end
 
 get '/' do
   memcache do
-    content_file = File.join(CONTENT_DIR, 'content.yml')
+    content_file = File.join(PROFILE_DIR, 'content.yml')
     content = YAML.load(File.read(content_file))
     @config = content['config']
     @items = content['items']
@@ -51,7 +51,7 @@ get '/stylesheets/:style.css' do
   content_type 'text/css'
   memcache do
     # let's use an import statement to load the specific sass variables
-    sass params['style'].to_sym, :sass => {:load_paths => [CONTENT_DIR]}
+    sass params['style'].to_sym, :sass => {:load_paths => [PROFILE_DIR]}
   end
 end
 
