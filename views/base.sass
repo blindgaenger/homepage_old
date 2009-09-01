@@ -38,9 +38,19 @@
 !Black= #000000
 !White= #ffffff
 
+/default colors
+!background= !Black
+!textcolor= !Aluminium4
+!linkcolor= !SkyBlue1
+!highlight= !Butter1
+
+/override colors
+@import style.sass
+
+
 html, body
   color: white
-  background-color= !Black
+  background-color= !background
   font-family: Helvetica,Tahoma,Verdana,Arial,sans-serif
   margin: 0
   padding: 0
@@ -53,8 +63,8 @@ body
     padding: 0
     width: 600px
     height: 100%
-    background-color= !Black
-    color= !Aluminium4
+    background-color= !background
+    color= !textcolor
     font-size: 1em
     font-weight: bold
     text-align: left
@@ -64,7 +74,7 @@ body
       float: left
       width: 500px
       border-style: solid
-      border-color= !Aluminium4
+      border-color= !textcolor
       border-width: 2px 0 2px 0
       padding: 0.5em 0
 
@@ -78,10 +88,9 @@ body
       a, em
         text-decoration: none
         font-style: normal
-        color= !SkyBlue1
-
+        color= !linkcolor
       a:hover
-        color= !Butter1
+        color= !highlight
 
     #sidebar
       float: right
@@ -105,5 +114,10 @@ body
             border: none
 
         li.active
-          border-bottom-color= !Butter1
+          border-bottom-color= !highlight
+
+    #carrier
+      display: none
+      color= !textcolor
+      background-color= !highlight
 

@@ -1,6 +1,7 @@
 ---
 config:
-
+  title: Bernd J&uuml;nger &mdash; bjuenger.de
+  google: 
 items:
 -
   id: homepage

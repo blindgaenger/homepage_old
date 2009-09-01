@@ -35,6 +35,7 @@ get '/' do
   memcache do
     content_file = File.join(CONTENT_DIR, 'content.yml')
     content = YAML.load(File.read(content_file))
+    @config = content['config']
     @items = content['items']
     haml :index
   end
@@ -49,7 +50,8 @@ end
 get '/stylesheets/:style.css' do
   content_type 'text/css'
   memcache do
-    sass params['style'].to_sym
+    # let's use an import statement to load the specific sass variables
+    sass params['style'].to_sym, :sass => {:load_paths => [CONTENT_DIR]}
   end
 end
 

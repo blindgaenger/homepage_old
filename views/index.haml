@@ -1,41 +1,61 @@
-#main
-  %h1 Welcome!
-  - @items.each do |item|
-    %p{:id=>item['id']}= to_html item
+!!! XML
+!!! Basic
+%html{:xmlns=>'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:'http-equiv'=>'content-type', :content=>'text/html; charset=utf-8'}
+    %meta{:'http-equiv'=>'Content-Language', :content=>'en-us'}
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    -# http://claimid.com/openid
+    %link{:rel=>"openid.server", :href=>"http://openid.claimid.com/server"}
+    %link{:rel=>"openid.delegate", :href=>"http://openid.claimid.com/blindgaenger"}    
+    %link{:rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/base.css'}
+    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.color.pack.js"}
+    %title= @config['title']
+  %body
+    #box
+      #main
+        %h1 Welcome!
+        - @items.each do |item|
+          %p{:id=>item['id']}= to_html item
 
-#sidebar
-  %ul
-    - @items.select {|i| i.is_a? Hash}.each do |item|
-      %li{:name=>item['id']}
-        %a{:href=>item['link'], :title=>item['desc']}>
-          %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
+      #sidebar
+        %ul
+          - @items.select {|i| i.is_a? Hash}.each do |item|
+            %li{:name=>item['id']}
+              %a{:href=>item['link'], :title=>item['desc']}>
+                %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
 
-:javascript
-  var colorButter1 = "#fce94f";
-  var colorAluminium4 = "#888a85";
+      #carrier
 
-  function animateSection(item, color, time) {
-    var section = $("#" + $(item).attr('name'));
-    section.stop().animate( { color: color }, time );
-  }
+      :javascript
+        function animateSection(item, color, time) {
+          var section = $("#" + $(item).attr('name'));
+          section.stop().animate( { color: color }, time );
+        }
 
-  $(document).ready(function() {
-    $('li').hover(function() {
-      $(this).addClass("active");
-      animateSection(this, colorButter1, 250);
-    }, function() {
-      $(this).removeClass("active");
-      animateSection(this, colorAluminium4, 1000);
-    });
-  });
-  
-:javascript
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        $(document).ready(function() {
+          // carry the colors from the stylesheet to javascript
+          // http://dev.jquery.com/ticket/4434
+          var textColor = $('#carrier').css('color');
+          var highLight = $('#carrier').css('background-color');    
+        
+          $('li').hover(function() {
+            $(this).addClass("active");
+            animateSection(this, highLight, 250);
+          }, function() {
+            $(this).removeClass("active");
+            animateSection(this, textColor, 1000);
+          });
+        });
+        
+      :javascript
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-:javascript
-  try {
-  var pageTracker = _gat._getTracker("UA-496450-1");
-  pageTracker._trackPageview();
-  } catch(err) {}
+      :javascript
+        try {
+        var pageTracker = _gat._getTracker("UA-496450-1");
+        pageTracker._trackPageview();
+        } catch(err) {}
 

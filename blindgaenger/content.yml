@@ -1,6 +1,7 @@
 ---
 config:
-
+  title: blindgaenger.net
+  google: UA-496450-1
 items:
 -
   id: homepage
