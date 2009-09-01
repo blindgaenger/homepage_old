@@ -21,9 +21,10 @@
 
     %title= @config['title']
   %body
-    #page
-      %a{:href=>@config['page'], :title=>'Turn the page!'}
-        %img#turn{:src=>"/images/page.png"}
+    - if @config['page']
+      #page
+        %a{:href=>@config['page'], :title=>'Turn the page!'}
+          %img#turn{:src=>"/images/page.png"}
 
     #box
       #main
@@ -55,7 +56,7 @@
           });
         
           // carry the colors from the stylesheet to javascript
-          // http://dev.jquery.com/ticket/4434
+          // can't access them with jQuery (see http://dev.jquery.com/ticket/4434)
           var textColor = $('#carrier').css('color');
           var highLight = $('#carrier').css('background-color');    
         
@@ -67,14 +68,14 @@
             animateSection(this, textColor, 1000);
           });
         });
-        
-      :javascript
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-      :javascript
-        try {
-        var pageTracker = _gat._getTracker("UA-496450-1");
-        pageTracker._trackPageview();
-        } catch(err) {}
+      - if @config['google']
+        :javascript
+          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        :javascript
+          try {
+          var pageTracker = _gat._getTracker("UA-496450-1");
+          pageTracker._trackPageview();
+          } catch(err) {}
 
