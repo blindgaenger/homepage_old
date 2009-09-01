@@ -51,7 +51,7 @@ items:
   id: contact
   name: Contact
   icon: mail.png
-  link: mailto:blindgaenger_AT_gmail_DOT_com
+  link: mailto:blindgaenger/AT/gmail/DOT/com
   desc: Send me a mail.
   text: So please feel free to LINK me.
 

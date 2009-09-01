@@ -2,14 +2,14 @@
 config:
   title: Bernd J&uuml;nger &mdash; bjuenger.de
   google: UA-496450-5
-  page: http://localhost:5678/
+  page: http://blindgaenger.net/
 items:
 -
   id: homepage
   name: Bernd J&uuml;nger
   icon: homepage.png
   link: http://bjuenger.de/
-  desc: TODO
+  desc: Genau diese Seite hier!
   text: Dies ist die Homepage von LINK. Ich bin Software-Entwickler in Karlsruhe.
 -
   id: blog
@@ -22,15 +22,15 @@ items:
   id: resume
   name: Lebenslauf
   icon: resume.png
-  link: http://localhost:4567/resume/Resume.txt
-  desc: TODO
+  link: http://bjuenger.de/resume/bernd-juenger-lebenslauf.txt
+  desc: Also Ausbildung, Berufserfahrung und Projekte.
   text: Dann ist vielleicht mein LINK interessant.
 -
   id: xing
   name: XING
   icon: xing.png
   link: https://www.xing.com/profile/Bernd_Juenger
-  desc: TODO
+  desc: Für alle Netzwerker.
   text: Die selben Informationen sind aber auch auf meinen LINK Profil.
 -
   id: facebook
@@ -43,8 +43,7 @@ items:
   id: contact
   name: Email
   icon: mail.png
-  link: mailto:bernd.juenger_AT_gmail_DOT_com
-  desc: Send me a mail.
+  link: mailto:bernd.juenger/AT/gmail/DOT/com
+  desc: Emails habe ich am liebsten!
   text: Und sonst bin ich immer gerne per LINK zu erreichen.
-
 
