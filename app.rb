@@ -51,7 +51,10 @@ get '/stylesheets/:style.css' do
   content_type 'text/css'
   memcache do
     # let's use an import statement to load the specific sass variables
-    sass params['style'].to_sym, :sass => {:load_paths => [PROFILE_DIR]}
+    sass params['style'].to_sym, :sass => {
+      :style => :compressed,
+      :load_paths => [PROFILE_DIR]
+    }
   end
 end
 
