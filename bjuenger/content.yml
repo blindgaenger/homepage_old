@@ -22,7 +22,7 @@ items:
   id: resume
   name: Lebenslauf
   icon: resume.png
-  link: http://bjuenger.de/resume/
+  link: http://localhost:4567/resume/Resume.txt
   desc: TODO
   text: Dann ist vielleicht mein LINK interessant.
 -

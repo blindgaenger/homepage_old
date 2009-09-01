@@ -21,10 +21,6 @@
 
     %title= @config['title']
   %body
-    - if @config['page']
-      #page
-        %a{:href=>@config['page'], :title=>'Turn the page!'}
-          %img#turn{:src=>"/images/page.png"}
 
     #box
       #main
@@ -40,7 +36,11 @@
                 %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
 
       #carrier
-      
+
+    - if @config['page']
+      #page
+        %a{:href=>@config['page'], :title=>'Turn the page!'}
+          %img#turn{:src=>"/images/page.png"}      
 
       :javascript
         function animateSection(item, color, time) {
@@ -52,6 +52,8 @@
           $('#turn').fold({
             directory: '/commons/images',
             side: 'right',
+            startingWidth: 100,
+            startingHeight: 100,
             autoCurl: true
           });
         
@@ -75,7 +77,7 @@
           document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         :javascript
           try {
-          var pageTracker = _gat._getTracker("UA-496450-1");
+          var pageTracker = _gat._getTracker("#{@config['google']}");
           pageTracker._trackPageview();
           } catch(err) {}
 
