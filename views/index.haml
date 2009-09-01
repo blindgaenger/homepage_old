@@ -42,43 +42,43 @@
         %a{:href=>@config['page'], :title=>'Turn the page!'}
           %img#turn{:src=>"/images/page.png"}      
 
-      :javascript
-        function animateSection(item, color, time) {
-          var section = $("#" + $(item).attr('name'));
-          section.stop().animate( { color: color }, time );
-        }
+    :javascript
+      function animateSection(item, color, time) {
+        var section = $("#" + $(item).attr('name'));
+        section.stop().animate( { color: color }, time );
+      }
 
-        $(document).ready(function() {
-          // carry the colors from the stylesheet to javascript
-          // can't access them with jQuery (see http://dev.jquery.com/ticket/4434)
-          var textColor = $('#carrier').css('color');
-          var highLight = $('#carrier').css('background-color');    
-        
-          $('li').hover(function() {
-            $(this).addClass("active");
-            animateSection(this, highLight, 250);
-          }, function() {
-            $(this).removeClass("active");
-            animateSection(this, textColor, 1000);
-          });
-          
-          $('#turn').fold({
-            directory: '/images',
-            turnImage: 'turn.png',
-            side: 'right',
-            startingWidth: 100,
-            startingHeight: 100,
-            autoCurl: true
-          });
+      $(document).ready(function() {
+        // carry the colors from the stylesheet to javascript
+        // can't access them with jQuery (see http://dev.jquery.com/ticket/4434)
+        var textColor = $('#carrier').css('color');
+        var highLight = $('#carrier').css('background-color');    
+      
+        $('li').hover(function() {
+          $(this).addClass("active");
+          animateSection(this, highLight, 250);
+        }, function() {
+          $(this).removeClass("active");
+          animateSection(this, textColor, 1000);
         });
+        
+        $('#turn').fold({
+          directory: '/images',
+          turnImage: 'turn.png',
+          side: 'right',
+          startingWidth: 100,
+          startingHeight: 100,
+          autoCurl: true
+        });
+      });
 
-      - if @config['google']
-        :javascript
-          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        :javascript
-          try {
-          var pageTracker = _gat._getTracker("#{@config['google']}");
-          pageTracker._trackPageview();
-          } catch(err) {}
+    - if @config['google']
+      :javascript
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      :javascript
+        try {
+        var pageTracker = _gat._getTracker("#{@config['google']}");
+        pageTracker._trackPageview();
+        } catch(err) {}
 
