@@ -4,15 +4,27 @@
   %head
     %meta{:'http-equiv'=>'content-type', :content=>'text/html; charset=utf-8'}
     %meta{:'http-equiv'=>'Content-Language', :content=>'en-us'}
+    
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    
     -# http://claimid.com/openid
     %link{:rel=>"openid.server", :href=>"http://openid.claimid.com/server"}
-    %link{:rel=>"openid.delegate", :href=>"http://openid.claimid.com/blindgaenger"}    
-    %link{:rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/base.css'}
+    %link{:rel=>"openid.delegate", :href=>"http://openid.claimid.com/blindgaenger"}   
+     
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/base.css"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/commons/stylesheets/turn.css"}
+
     %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.pack.js"}
     %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.color.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.ui.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/commons/javascripts/turn.js"}
+
     %title= @config['title']
   %body
+    #page
+      %a{:href=>@config['page'], :title=>'Turn the page!'}
+        %img#turn{:src=>"/images/page.png"}
+
     #box
       #main
         %h1 Welcome!
@@ -27,6 +39,7 @@
                 %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
 
       #carrier
+      
 
       :javascript
         function animateSection(item, color, time) {
@@ -35,6 +48,12 @@
         }
 
         $(document).ready(function() {
+          $('#turn').fold({
+            directory: '/commons/images',
+            side: 'right',
+            autoCurl: true
+          });
+        
           // carry the colors from the stylesheet to javascript
           // http://dev.jquery.com/ticket/4434
           var textColor = $('#carrier').css('color');

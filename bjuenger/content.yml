@@ -2,6 +2,7 @@
 config:
   title: Bernd J&uuml;nger &mdash; bjuenger.de
   google: 
+  page: http://localhost:5678/
 items:
 -
   id: homepage
@@ -23,7 +24,7 @@ items:
   icon: resume.png
   link: http://bjuenger.de/resume/
   desc: TODO
-  text: Aber vielleicht ist mein LINK interessant.
+  text: Dann ist vielleicht mein LINK interessant.
 -
   id: xing
   name: XING

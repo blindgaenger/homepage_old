@@ -2,6 +2,7 @@
 config:
   title: blindgaenger.net
   google: UA-496450-1
+  page: http://localhost:4567/
 items:
 -
   id: homepage
