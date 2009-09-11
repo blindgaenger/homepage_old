@@ -1,7 +1,8 @@
 ---
 config:
   title: Bernd J&uuml;nger &mdash; bjuenger.de
-  google: UA-496450-5
+  #google: UA-496450-5
+  clicky: 132563
   page: http://blindgaenger.net/
 items:
 -

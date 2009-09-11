@@ -1,7 +1,8 @@
 ---
 config:
   title: blindgaenger.net
-  google: UA-496450-1
+  #google: UA-496450-1
+  clicky: 128818
   #page: http://bjuenger.de/
 items:
 -
