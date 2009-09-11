@@ -7,7 +7,6 @@ configure do
   if PROFILE_DIR.nil? || !File.exist?(PROFILE_DIR)
     raise "specify a valid $PROFILE environment variable or a command line argument"
   end
-  set :public, File.join(PROFILE_DIR, 'public')
 end
 
 helpers do
@@ -41,19 +40,11 @@ get '/' do
   end
 end
 
-get '/commons/*' do
-  memcache do
-    path = File.join'.', unescape(request.path_info)
-    pass unless File.file?(path)
-    send_file path, :disposition => nil
-  end
-end
-
-get '/stylesheets/:style.css' do
+get '/stylesheets/base.css' do
   content_type 'text/css'
   memcache do
     # let's use an import statement to load the specific sass variables
-    sass params['style'].to_sym, :sass => {
+    sass :base, :sass => {
       :style => :compressed,
       :load_paths => [PROFILE_DIR]
     }

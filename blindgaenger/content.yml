@@ -3,12 +3,13 @@ config:
   title: blindgaenger.net
   #google: UA-496450-1
   clicky: 128818
-  #page: http://bjuenger.de/
+  #turn_link: http://bjuenger.de/
+  #turn_image: bjuenger-page.png
 items:
 -
   id: homepage
   name: blindgaenger
-  icon: homepage.png
+  icon: blindgaenger.png
   link: http://blindgaenger.net/
   desc: You are already here!
   text: This is the homepage of my alter ego LINK. I'm interested in various aspects of software.

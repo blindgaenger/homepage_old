@@ -3,12 +3,13 @@ config:
   title: Bernd J&uuml;nger &mdash; bjuenger.de
   #google: UA-496450-5
   clicky: 132563
-  page: http://blindgaenger.net/
+  turn_link: http://blindgaenger.net/
+  turn_image: blindgaenger-page.png
 items:
 -
   id: homepage
   name: Bernd J&uuml;nger
-  icon: homepage.png
+  icon: bjuenger.png
   link: http://bjuenger.de/
   desc: Genau diese Seite hier!
   text: Dies ist die Homepage von LINK. Ich bin Software-Entwickler in Karlsruhe.

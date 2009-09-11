@@ -12,12 +12,12 @@
     %link{:rel=>"openid.delegate", :href=>"http://openid.claimid.com/blindgaenger"}   
      
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/base.css"}
-    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/commons/stylesheets/turn.css"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/turn.css"}
 
-    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.pack.js"}
-    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.color.pack.js"}
-    %script{:type=>"text/javascript", :src=>"/commons/javascripts/jquery.ui.pack.js"}
-    %script{:type=>"text/javascript", :src=>"/commons/javascripts/turn.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.color.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/jquery.ui.pack.js"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/turn.js"}
 
     %title= @config['title']
   %body
@@ -37,10 +37,10 @@
 
       #carrier
 
-    - if @config['page']
+    - if @config['turn_link'] && @config['turn_image']
       #page
-        %a{:href=>@config['page'], :title=>'Turn the page!'}
-          %img#turn{:src=>"/images/page.png"}      
+        %a{:href=>@config['page_link'], :title=>'Turn the page!'}
+          %img#turn{:src=>"/images/#{@config['turn_image']}"}
 
     :javascript
       function animateSection(item, color, time) {
