@@ -42,9 +42,11 @@ get '/' do
 end
 
 get '/commons/*' do
-  path = File.join'.', unescape(request.path_info)
-  pass unless File.file?(path)
-  send_file path, :disposition => nil
+  memcache do
+    path = File.join'.', unescape(request.path_info)
+    pass unless File.file?(path)
+    send_file path, :disposition => nil
+  end
 end
 
 get '/stylesheets/:style.css' do
