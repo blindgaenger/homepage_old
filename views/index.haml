@@ -38,8 +38,8 @@
 
     - if @config['turn_link'] && @config['turn_image']
       #page
-        %a{:href=>@config['page_link'], :title=>'Turn the page!'}
-          %img#turn{:src=>"/images/#{@config['turn_image']}"}
+        %a{:href=>@config['turn_link'], :title=>'Turn the page!'}
+          %img#turn{:src=>"/images/#{@config['turn_image']}", :alt=>@config['turn_link']}
 
     :javascript
       function animateSection(item, color, time) {
