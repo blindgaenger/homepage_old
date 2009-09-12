@@ -1,5 +1,5 @@
 !!! XML
-!!! Basic
+!!! Strict
 %html{:xmlns=>'http://www.w3.org/1999/xhtml'}
   %head
     %meta{:'http-equiv'=>'content-type', :content=>'text/html; charset=utf-8'}
@@ -30,7 +30,7 @@
       #sidebar
         %ul
           - @items.select {|i| i.is_a? Hash}.each do |item|
-            %li{:name=>item['id']}
+            %li{:id=>"icon_#{item['id']}"}
               %a{:href=>item['link'], :title=>item['desc']}>
                 %img{:src=>"/images/#{item['icon']}", :alt=>item['name']}>
 
@@ -43,8 +43,8 @@
 
     :javascript
       function animateSection(item, color, time) {
-        var section = $("#" + $(item).attr('name'));
-        section.stop().animate( { color: color }, time );
+        var section = $(item).attr('id').replace('icon_', '#');
+        $(section).stop().animate( { color: color }, time );
       }
 
       $(document).ready(function() {
@@ -86,5 +86,6 @@
         var domainy = location.protocol == "https:" ? "https://static.getclicky.com" : "http://static.getclicky.com";
         document.write(unescape("%3Cscript src='" + domainy + "/#{@config['clicky']}.js' type='text/javascript'%3E%3C/script%3E"));
       %noscript
-        %img{:alt=>"Clicky", :width=>"1", :height=>"1", :src=>"http://static.getclicky.com/#{@config['clicky']}-db17.gif"}
+        %div{:style=>'width:1px;height:1px'}
+          %img{:alt=>'&nbsp;', :width=>'1', :height=>'1', :src=>"http://static.getclicky.com/#{@config['clicky']}-db17.gif"}
 
