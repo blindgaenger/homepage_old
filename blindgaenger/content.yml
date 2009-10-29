@@ -3,8 +3,8 @@ config:
   title: blindgaenger.net
   #google: UA-496450-1
   clicky: 128818
-  #turn_link: http://bjuenger.de/
-  #turn_image: bjuenger-page.png
+  turn_link: http://bjuenger.de/
+  turn_image: bjuenger-page.png
 items:
 -
   id: homepage
