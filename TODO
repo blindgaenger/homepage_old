@@ -1,14 +1,18 @@
 TODO
-- anderes bjuenger/homepage.png
-- Ecke verlinkt zu blindgaenger/bjuenger
-- bjuenger/resume.png
 - bjuenger/LinkedIn
 - bjuenger/favicon.ico
-- page.png von bjuenger neumachen, wenn icon ändert
-- enable blindgaenger config[page] wenn bjuenger fertig
 - Resume in verschiedenen Formaten (html, txt, pdf, doc)
   - Name im Dateinamen
   - Datei in deutsch und als Lebenslauf benennen
+
+DOIT
+
+DONE
+- page.png von bjuenger neumachen, wenn icon ändert
+- Ecke verlinkt zu blindgaenger/bjuenger
+- bjuenger/resume.png
+- anderes bjuenger/homepage.png
+- enable blindgaenger config[page] wenn bjuenger fertig
 
 DONT
 - momentaner Arbeitgeber
