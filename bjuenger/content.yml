@@ -21,10 +21,10 @@ items:
   desc: when you don't know where you @
   text: Mein LINK ist deshalb auch eher technisch.
 -
-  id: resume
+  id: cv
   name: Lebenslauf
-  icon: resume.png
-  link: http://bjuenger.de/resume/bernd-juenger-lebenslauf.txt
+  icon: cv.png
+  link: http://ceevee.com/bjuenger/
   desc: Also Ausbildung, Berufserfahrung und Projekte.
   text: Dann ist vielleicht mein LINK interessant.
 -
@@ -33,7 +33,7 @@ items:
   icon: xing.png
   link: https://www.xing.com/profile/Bernd_Juenger
   desc: Für alle Netzwerker.
-  text: Die selben Informationen sind aber auch auf meinen LINK Profil.
+  text: Die selben Informationen finden sich auch auf meinen LINK Profil.
 -
   id: facebook
   name: Facebook
