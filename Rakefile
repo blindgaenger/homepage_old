@@ -4,7 +4,6 @@ def deploy_to_heroku(app_name, remote_name, config_vars=nil)
     exec_heroku app_name, "config:add " + config_vars.map {|key,val| "#{key}=#{val}"}.join(' ')
   end
   system "git push #{remote_name} master --force"
-  system "gnome-open http://#{app_name}.heroku.com/"
 end
 
 def exec_heroku(app_name, command)
